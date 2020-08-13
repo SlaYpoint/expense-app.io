@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <h1 id="output">0</h1>
+    <input id="inputAmt" type="text"></input>
+    <button id="addExpense">+</button>
+    <script type="text/javascript">
+        // init expense at 0
+        const output = document.querySelector("#output");
+        
+        let totalExpense=0;
+
+        //on click of add btn
+        function addExpenseTotal(){
+            //read value from input
+            const expense = parseInt(document.querySelector("#inputAmt").value,10);
+            //add expense to totalExpense
+            totalExpense = totalExpense + expense;
+            output.textContent = totalExpense;
+        }
+
+        //get btn element
+        const element = document.querySelector("#addExpense");
+        //listen to click event
+
+        element.addEventListener("click", addExpenseTotal, false);
+        // console.log(element);
+    </script>
+</body>
+</html>
